@@ -1,0 +1,211 @@
+**************************** Create Spring Boot Application with below starters **********************
+
+a) web-starter
+b) data-jpa
+c) h2
+d) project lombok
+e) devtools
+
+*************************** Create Entity class *********************************************
+@Data
+@Entity
+@Table(name = "BOOK_DTLS")
+public class Book {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "BOOK_ID")
+	private Integer bookId;
+
+	@Column(name = "BOOK_NAME")
+	private String bookName;
+
+	@Column(name = "BOOK_PRICE")
+	private Double bookPrice;
+
+}
+
+******************************** Create Repository interface ******************************************
+
+public interface BookRepository extends JpaRepository<Book, Serializable>{
+
+}
+
+************************************ Create Service interface and impl class *******************************
+
+public interface BookService {
+
+	public String upsertBook(Book book);
+
+	public List<Book> getAllBooks();
+
+}
+
+@Service
+public class BookServiceImpl implements BookService {
+
+	private BookRepository repository;
+
+	public BookServiceImpl(BookRepository repository) {
+		this.repository = repository;
+	}
+
+	@Override
+	public String upsertBook(Book book) {
+		repository.save(book);
+		return "Record Inserted";
+	}
+
+	@Override
+	public List<Book> getAllBooks() {
+		return repository.findAll();
+	}
+}
+
+********************************************* Create Rest Controller ***************************************
+@RestController
+@CrossOrigin
+public class BookRestController {
+
+	@Autowired
+	private BookService service;
+
+	@PostMapping("/book")
+	public ResponseEntity<String> addBook(@RequestBody Book book) {
+		String msg = service.upsertBook(book);
+		return new ResponseEntity<>(msg, HttpStatus.CREATED);
+	}
+
+	@GetMapping("/books")
+	public ResponseEntity<List<Book>> getAllBooks() {
+		List<Book> allBooks = service.getAllBooks();
+		return new ResponseEntity<>(allBooks, HttpStatus.OK);
+	}
+}
+
+********************************* Configure below properties in application.properties file *************************
+
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.username=sa
+spring.datasource.password=sa
+spring.datasource.driver-class-name=org.h2.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+
+spring.jpa.show-sql=true
+
+
+************************************** Run the boot application and insert the data using POST Request **************
+
+
+
+
+********************* Create Angular application *************************
+
+	$ ng new bookapp
+
+********************* Create Book class to represent json response in object format *****************
+
+	$ ng generate class Book
+
+export class Book {
+
+    bookId:number;
+    bookName:string;
+    bookPrice:number;
+
+     constructor(a:number,b:string,c:number){
+        this.bookId = a;
+        this.bookName = b;
+        this.bookPrice = c;
+    }
+}
+
+******************* Import HttpClientModule & FormsModule in AppModule****************************
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule, FormsModule, HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+****************************   Write REST Call logic in AppComponent *****************************
+
+import { HttpClient } from '@angular/common/http';
+import { Component, Inject } from '@angular/core';
+import { Book } from './book';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  
+  msg:string="";
+  book:Book = new Book(1,"Spring", 200);
+  books:Book[] = [];
+
+  constructor(@Inject(HttpClient)private http:HttpClient){}
+
+  getData(){
+    this.http.get<Book[]>("http://localhost:8080/books", {responseType : 'json'})
+    .subscribe(data => {
+      this.books = data;
+    });
+  }
+
+  onInsertClick(){
+    this.http.post("http://localhost:8080/book", this.book, {responseType:"text"})
+    .subscribe(data => {
+    this.msg = data;
+  });
+ }
+
+}
+
+******************************************* Write presentation logic in template ******************************
+
+<div>
+  <h3>Angular UI + Boot REST API</h3>
+  <form>
+  Book ID : <input type="text" name="bookId" [(ngModel)]="book.bookId"/><br/>
+  Book Name : <input type="text" name="bookName" [(ngModel)]="book.bookName"/><br/>
+  Book Price : <input type="text" name="bookPrice" [(ngModel)]="book.bookPrice"/><br/>
+  <input type="submit" value="Save Book" (click)="onInsertClick()"/><br/>
+  {{msg}}
+  </form>
+</div>
+<div>
+  <h3>Book Details</h3>
+      <input type="button" value="Get Data" (click)="getData()"/>
+  
+      <table border="1">
+          <tr>
+              <th>Book Id</th>
+              <th>Book Name</th>
+              <th>Book Price</th>
+          </tr>
+          <tr *ngFor="let book of books">
+              <td>{{book.bookId}}</td>
+              <td>{{book.bookName}}</td>
+              <td>{{book.bookPrice}}</td>
+          </tr>
+      </table>
+  </div>
+
+******************************************Run the Angular Application ***************

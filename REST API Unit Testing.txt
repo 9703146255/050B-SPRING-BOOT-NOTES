@@ -1,0 +1,87 @@
+What is Unit testing ?
++++++++++++++++++
+
+-> It is the process of testing "unit amount of work" 
+
+-> When we implement  code, we need to test weather that code is working or not
+
+-> With the help of unit testing we can identify issues in the code
+
+-> To perform Unit testing we will use Junit
+
+-> Junit is an open source & free framework to perform unit testing for java applications
+
+
+############
+Mocking
+#############
+
+-> Mocking is the process of creating substitute object for the real object
+
+-> Using Mock Objects we can perform isolated unit testing
+
+
+*************************************************************************
+@Service
+public class WelcomeService {
+
+	public String getMsg() {
+		String msg = "Good Morning";
+
+		return msg;
+	}
+}
+-----------------------------------------------------------
+@RestController
+public class WelcomeRestController {
+
+	@Autowired
+	private WelcomeService service;
+
+	@GetMapping("/welcome")
+	public String welcomeMsg() {
+		String msg = service.getMsg();
+		return msg;
+	}
+}
+-------------------------------------------------------------
+@WebMvcTest(value = WelcomeRestController.class)
+public class WelcomeRestControllerTest {
+
+	@MockBean
+	private WelcomeService service;
+
+	@Autowired
+	private MockMvc mockMvc;
+
+	@Test
+	public void welcomeMsgTest() throws Exception {
+
+		// defining mock obj behaviour
+		when(service.getMsg()).thenReturn("Welcome to Ashok IT");
+
+		// preparing request
+		MockHttpServletRequestBuilder reqBuilder = MockMvcRequestBuilders.get("/welcome");
+
+		// sending request
+		MvcResult mvcResult = mockMvc.perform(reqBuilder).andReturn();
+
+		// get the response
+		MockHttpServletResponse response = mvcResult.getResponse();
+
+		// validate response status code
+		int status = response.getStatus();
+		assertEquals(200, status);
+
+	}
+
+}
+
+
+
+
+
+
+
+
+

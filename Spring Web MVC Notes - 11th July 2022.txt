@@ -1,0 +1,180 @@
+Course : RESTful Services & Microservices
+
+Pre-Requisites : Spring Core Module & Spring Boot Basics
+
+Course Content : Spring Web MVC, RESTful Services & Microservices
+
+Duration : 2 Months
+
+Download Course Content : https://ashokitech.com/restful-services-microservices-online-training
+
+++++++++++++++
+Spring Web MVC
++++++++++++++++
+
+-> Spring Web MVC is one module available in the spring framework
+
+-> Using Spring Web MVC module we can develop 2 types of applications
+
+			1) Web Applications
+
+			2) Distributed Application (Webservices)
+
+
+-> Web Applications will have user interface (UI)
+-> Customers can access web applications directley using internet
+-> Web Applications meant for customer to business communication (C 2 B)
+
+	Ex: facebook, gmail, linkedin, naukri etc...
+
+
+-> Distributed Applications are meant for Business to Business Communication ( B 2 B )
+-> If one application is communicating with another application then we call them as Distributed apps
+-> Distributed Applications we can develop in 2 ways
+
+			1) SOAP Webservices
+			2) RESTFul Services
+
+Note: SOAP Webservices & RESTFul Services can be developed using Spring Web MVC
+
+-> Distributed applications we are developing to re-use logic of one application in another application.
+
+	Ex:
+
+				MakeMyTrip  -----------> IRCTC
+				Passport  -----------> AADHAR
+				Gpay ---------------> Banking Apps
+				Swiggy  ----------> Banking Apps
+
+
+++++++++++++++++++++++++++++
+Advantages of Spring Web MVC
+++++++++++++++++++++++++++++
+
+1) Easily we can develop web & distributed applications using Web MVC module
+
+2) It supports Multiple Presentation Technologies (JSP & Thymeleaf)
+
+3) I 18 N Support (Internationalization)
+
+4) Form Bindings ( Form Data will be binded to Object and vice versa )
+
+5) Form Tag Library (To simplify forms development with Dynamic behvaiour)
+
+6) Having support for XML to Java object conversion and vice versa
+
+7) Having support for JSON to java object conversion and vice versa
+
+
+++++++++++++++++++++++++++
+Spring Web MVC Architecture
+++++++++++++++++++++++++++
+
+1) Dispatcher Servlet (Front Controller)
+2) Handler Mapper
+3) Controller
+4) Model And View
+5) ViewResolver
+6) View
+
+
+-> DispatcherServlet is a pre-defined servlet class in Spring Web MVC
+-> DispatcherServlet is called as Front Controller / Framework Servlet
+-> It is responsible to perform pre-processing and post-processing for every request
+
+-> HandlerMapper is a pre-defined class in spring web mvc
+-> HandlerMapper is used to identify Request Handler
+-> It will identify which request should be processed by which Controller class
+-> HandlerMapper will identify Request Handler based on URL Pattern
+
+-> Controller is a class which contains logic to handle request and response
+-> Controller is also called as Request Handler
+-> We will create Controller classes using @Controller annotation
+-> Controller will return data to Dispatcher in ModelAndView object
+
+-> Model represents Data in Key-Value pair format
+-> View represents presentation logical file name
+-> To display data in view file we will use ModelAndView object
+
+-> ViewResolver is used to identify where view files available in our project
+-> ViewResolver is responsible to identify physical location of view files
+
+-> View component is used to render model data on physical view file to display that to end user
+
+
+++++++++++++++++++++++++++++++++++++++++++++++
+Building First Web Application using Spring Web MVC
++++++++++++++++++++++++++++++++++++++++++++++
+
+1) Create Spring Starter application with below dependencies
+
+		a) spring-boot-starter-web
+		b) tomcat-embed-jasper
+		c) devtools
+
+2) Create Controller class and write Required methods
+
+3) Create View Files with Presentation logic
+
+4) Configure ViewResolver in application.properties file with prefix and suffix
+
+5) Run the application and test it.
+
+
+Note-1 : web-starter will provide the support to build web apps with MVC architecture and it provides Tomcat as default embedded container (we no neeed to setup server manually).
+
+Note-2 : tomcat-embed-jasper will provide the support to work with JSP files in Spring Web MVC
+
+Note-3 : devtools is used to re-start the server when changes happend in the code.
+
+Note-4 : Java class will be represented as a Spring Controller using @Controller annotation
+
+Note-5 : Controller class methods should be binded to HTTP Protocol methods to handle HTTP Requests 
+
+
+# tomact-embed-jasper dependency
+
+<dependency>
+	<groupId>org.apache.tomcat.embed</groupId>
+	<artifactId>tomcat-embed-jasper</artifactId>
+</dependency>
+
+# Controller class
+
+@Controller
+public class WelcomeController {
+
+	@GetMapping("/welcome")
+	public ModelAndView getWelcomeMsg() {
+
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("msg", "Welcome to Ashok IT...!!");
+		
+		mav.setViewName("index");
+
+		return mav;
+	}
+}
+
+
+# view resolver configuration in application.properties
+spring.mvc.view.prefix=/views/
+spring.mvc.view.suffix=.jsp
+
+# jsp file 
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>${msg}</h1>
+</body>
+</html>
+
+

@@ -1,0 +1,244 @@
+RESTFul Services
++++++++++++++++
+==>REST    ==>	'Representational State Transfer'
+
+==>REST    ==>	used to dev Distributed Applications with Intereoperability
+
+==>		1app comm 2nd app  called ==>	DA
+
+==>		I/P	->	means	==>	irre p, irr lang
+
+==>		DA-> BB COMM
+
+==>		DA->	re-use 1APP  SER	 ==> 	2ND APP SERV
+
+
+
+
+
+
+
+-> REST stands for 'Representational State Transfer'
+
+-> RESTFul services are used to develop Distributed Applications with Intereoperability
+
+-> If one application is communicating with another application then those are called as 'Distributed Apps'
+
+-> Intereoperability means irrespective of the platform and language applications can communicate[pl]
+
+					java app <-----------> .Net app
+
+					.Net app <----------> Python app
+
+					Python app <---------> Java App
+
+-> Distributed applications are used for B 2 B communications
+
+-> B2B means Business to Business Communication
+
+-> Distributed Application will re-use services of one application in another application
+
+-> RESTful Services are providing 'Intereoperability'
+
+-> Two Actors will be involved in Distributed Applications development
+
+			1) Provider 
+			2) Consumer
+
+-> The application which is "providing business services" is called as "Provider Application"
+
+-> The application which is "accessing business services" is called as "Consumer Application"
+
+Note: One provider application can have multiple consumer applications
+
+-> Provider and Consumer will communicate using HTTP as a mediator
+
+-> Provider and Consumer will exchange the data in Text / XML / JSON format
+
+Note: In Industry we will use JSON format to exchange data from one application to another application
+
+-> To start our journey with RESTFul services development we should be good in below areas
+
+1) HTTP Protocol (Methods, Status Codes, Req structure & Res Structure)
+
+2) XML and JAX-B Api[x==>x]
+
+3) JSON and Jackson Api
+
+################
+What is HTTP ?
+################
+Hyper Text Transfer Protocol
+mediator between client & server
+CA send HTTP Req to PA
+PA process the req it will send http resp to cons
+
+
+
+-> HTTP stands for Hyper Text Transfer Protocol
+
+-> It acts as a mediator between client & server  ( Consumer & Provider )
+
+-> Consumer application will send HTTP Req to Provider application
+
+-> Provider application will process the request and it will send HTTP response to Consumer
+
+
+###############
+HTTP Methods
+###############
+send request from con->pro
+what type of operations clnt and cons perform
+
+
+
+
+
+-> HTTP methods are used to send request from Consumer application to Provider application
+
+-> HTTP method will represent what type of operation  client / consumer wants to perform with Provider
+
+a) GET
+b) POST
+c) PUT
+d) DELETE
+
+a) GET
+=======
+		==>	Retrieve the data from the server
+	
+		==>	Its not have body to send data in the req
+
+		==>	To send any data get req will use PathParams && QueryParams
+
+	
+
+-> GET request is used to retrieve data from Server / Provider application.
+-> GET request will not have body to send data in the request
+-> To send any data using GET request then we will use Path Params & Query Params
+
+			Ex: https://www.youtube.com/watch?v=VO818de8sdk
+
+Note: Path Params & Query Params data will be displayed in the URL
+
+Note: It is not recommended to send sensitive / secret data using Path Params & Query Params
+
+-> GET request is Idempotent (means if you send same GET request for multiple times also nothing will change at server)
+
+
+b) POST
+========
+-> POST request is used to create a new record at server 
+
+-> When consumer wants to send [huge data/ sensitive data] then Consumer will use POST request
+
+-> POST request contains request body
+
+-> POST request is Non-Idempotent
+
+Note: In POS T request we can send data in URL and in Request Body.
+
+Note: Request Body is the recommended approach to send sensitive data to server
+
+c) PUT
+=====
+-> PUT request is used to update a record at server
+
+-> When consumer wants to update a record at then consumer will send PUT request to Provider
+
+-> PUT request contains request body
+
+-> PUT request is Idempotent
+
+Note: In PUT request we can send data in URL and in Request Body.
+
+Note: Request Body is the recommended approach to send sensitive data to server
+
+d) DELETE
+
+-> DELETE request is used to delete a record at server
+-> DELETE request contains request body
+-> DELETE request is Idempotent
+
+Note: In DELETE request we can send data in URL and in Request Body.
+
+
+######################
+HTTP Request Structure	[Irl,Rh,---,Rb]
+#######################
+
+1) Intial Request Line  ( HTTP method + URL )   =====>>HUUUUUUUUUUUUUUUUUUU
+
+2) Request Headers ( key-value )
+
+3) Blank Line to seperate Header & Body
+
+4) Request Body (Request Payload)
+
+
+######################
+HTTP Response Structure
+#######################
+
+1) Initial Response line (Protocl Version + Status Code + Status msg)
+2) Response Headers (Key-value)
+3) Blank Line to seperate Header & Body
+4) Response Body (Response Payload)
+
+
+
+##################
+HTTP Status Codes
+##################
+
+-> HTTP Status codes will represent	 ==>>	how the request process by server / provider
+
+1xx	--->	 (100 - 199) 	 ---> 	INFO
+
+2xx	--->  	(200 - 299) 	 ---> 	OK (success)
+
+3xx	--->  	(300 - 399)  	--->	 Redirect
+
+4xx 	--->	(400 - 499)		 ---> 	Client Error
+
+5xx 	--->	(500 - 599)		 ---> 	Server Error
+
+
+
+200 		==>		OK: 			==>		The request was successful.
+
+201		==>		 Created:			==>		 The request has been fulfilled, and a new resource has been created.
+
+204 		==>		No Content: 		==>		The server successfully processed the request but there is no content to send back.
+
+400 [BUFNF]	==>		Bad Request: 		==>		The server cannot or will not process the request due to a client error.
+
+401 		==>		Unauthorized: 		==>		The request lacks proper authentication credentials.
+
+403 		==>		Forbidden:		==>		 The server understood the request, but it refuses to authorize it.
+
+404 		==>		Not Found: 		==>		The requested resource could not be found on the server.
+
+405		==>		 Method Not Allowed:	==>		 The method specified in the request is not allowed for the resource.
+
+500 		==>		Internal Server Error: 	==>		A generic error message returned when an unexpected condition was encountered on the server.
+
+502 		==>		Bad Gateway: 		==>		The server, while acting as a gateway or proxy, received an invalid response from an inbound server.
+
+503		==>		 Service Unavailable: 		==>		The server is not ready to handle the request. Common causes are a server that is down for maintenance or is overloaded.
+
+504 		==>		Gateway Timeout: 		==>		The server, while acting as a gateway or proxy, did not receive a timely response from an upstream server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

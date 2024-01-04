@@ -1,0 +1,88 @@
+-> Angular is a client side framework developed by Google company
+
+-> Angular framework is developed based on TypeScript
+
+-> Angular is mainley used for Single Page Applications
+
+-> Angular supports multiple devices (Mobiles & Desktops)
+
+-> Angular supports multiple browsers
+
+-> Angular is free and open source
+
+-> Angular JS and Angular both are not same
+
+-> From Angular 2 version onwards it is called as Angular Framework
+
+	Note: The current version of Angular is 14
+
+--------------------------------------------------------------------------------------------
+Angular Building Blocks
+-------------------------------------------------------------------------------------------
+1) Component
+2) Metadata
+3) Template
+4) Data Binding
+5) Module
+6) Service
+7) Dependency Injection
+8) Directive
+9) Pipes
+
+
+-> Angular application is collection of components. In components we will write logic to send data to template and capture data from template. Components are TypeScript classes.
+
+-> Metadata nothing data about the data. It provides information about components.
+
+-> Template is a view where we will write our presentation logic. In Angular application template is a HTML file. Every Component contains its own Template.
+
+-> Data Binding is the process of binding data between component property and view element in template file.
+
+-> Module is a collection of components directives and pipes
+
+-> Service means it contains re-usable business logic. Service classes we will inject in Components using Depdency Injection.
+
+-> Dependency Injection is the process of injecting dependent object into target object. In Angular applications services will be injected into components using DI.
+
+-> Directives are used to manipulate DOM elements.
+
+-> Pipes are used to transform the data before displaying
+
+
+Environment Setup For Angular Applications
+------------------------------------------
+1) Install Node JS
+2) Install TypeScript
+3) Install Angular CLI
+4) Install Visual Studio Code IDE
+
+-> Angular 2+ framework is available as a collection of packages, those packages are available in "Node". To use those packages "npm" (Node Package Manager) is must and should..
+
+	URL : https://nodejs.org/en/
+
+-> After installing node software, open cmd and type node -v. It should display node version number then installation is successfull.
+
+-> Angular framework itself is developed based on TypeScript. In Angular applications we will write code using TypeScript only.
+
+-> We can install Typescript using Node Package Manager (npm). Open command prompt and execute below command to install TS.
+
+	$ npm install -g typescript
+
+-> After TypeScript installation got completed we can verify version number using below command in cmd. If it displays version number then installtion is successfull.
+
+	 $ tsc -v
+
+-> Install Angular CLI software using below command in TypeScript.
+
+	  $ npm install @angular/cli -g
+
+-> Check angular installation using below command
+
+	  $ ng v
+
+-> Download and install VS code IDE
+
+	URL : https://code.visualstudio.com/download
+
+
+Note: We are done with angular setup... lets start building angular applications

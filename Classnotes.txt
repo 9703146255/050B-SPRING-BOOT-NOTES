@@ -1,0 +1,213 @@
+Spring Boot with Cloud & Microservices (19-SBMS)
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+=> What are the pre-requisites to learn this course ?
+
+=> What is our SBMS course content ?
+
+=> Who should learn this SBMS course ?
+
+=> Why to learn this SBMS course ?
+
+=> How job opportunites are available for Spring Boot & Microservices 
+
+=> SBMS Course Details
+
+
+
+Pre-Requisites
+++++++++++++++
+
+1) Core Java 
+
+2) Adv Java (JDBC, Servlets & JSP)
+
+3) SQL (CRUD)
+
+SBMS Course Content
++++++++++++++++++++
+
+1) Spring Core Module
+
+2) Spring Boot
+
+3) Spring Data JPA
+
+4) Spring Web MVC
+
+5) RESTFul Services (Spring REST)
+
+6) Spring Cloud
+
+7) Microservices
+
+8) Spring Security
+
+
+Who should learn this SBMS ?
+++++++++++++++++++++++++++++
+
+-> Every java developer should learn Spring Boot & Microservices 
+		(both freshers & experienced)
+
+-> To get job as a java developer we need to have very good knowledge in SBMS
+
+-> To survive in IT as a java developer we need to have very good knowledge in SBMS
+
+-> Now a days all java projects are using SBMS only
+
+-> Every company asking for Spring Boot & Microservices resources only
+
+====> For 3 years java developer with SBMS ===> 15+ lakhs package
+
+
+Your Trainer Info
++++++++++++++++++
+Name : Mr. Ashok 
+Exp : 9+ Yrs Industry Experience
+Role : Tech Lead
+USA Based Banking Company (Product Based)
+
+Course Info
++++++++++++
+Name : Spring Boot with Cloud & Microservices
+Course Code : 19-SBMS
+Start Date : 01-Jun-2022
+Class Time : 7 AM - 8:15 AM IST (Mon - Sat)
+Duration : 3.5 Months
+Course Fee : 7,000 INR (Live Classes + Daily ClassNotes)
+For Backup Videos : 3,000 INR (6 months access)
+
+Note: After completion of SBMS, you are equal to 4+ years exp Spring Boot developer.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Application Development
+++++++++++++++++++++++++
+
+=> Application development divied into 2 parts
+
+		1) Backend Development
+
+		2) Frontend Development
+
+
+	######## Fullstack Development = Backend development + Frontend development #########
+
+=> Backend contains the business logic of our application
+
+	(webservice calls, validations, email logic, db communication)
+
+=> Frontend contains user interface of the application
+		
+		(presentation logic)
+
+=> End users interact with frontend of our application. Frontend will interact with Bakend of our application.  Backend will execute business logic and it will communicate with database also.
+
+=> The developers who can do both backend development and front end development they are called as Fullstack Developers.
+
+=> Fullstack developers are having lot of demand in the market. 
+
+=> Fullstack developers are hot cakes in the market
+
+=> Companies are offering high packages for fullstack developers.
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Monolith Vs Microservices
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+=> If we develop all the functionalities in single project then it is called as Monolith Architecture based application.
+
+=> In Microservices architecture, functionality will be divided into several apis.
+
+
+
++++++++++++++++
+Java Road Map
++++++++++++++
+
+=> Core Java
+
+=> Adv Java
+		- JDBC
+		- Servlets
+		- JSP
+
+=> SQL
+
+=> Data Structures & Algorithms
+
+=> Hibernate ORM Framework
+
+=> Spring Framework
+
+=> Spring Boot
+
+=> RESTFul Services
+
+=> Microservices
+
+=> Security
+
+=> Design Patterns
+
+
+=> Spring Boot is just one approach to develop Spring Based applications with less configurations.
+
+=> Spring Boot came into market with Auto Configuration concept
+
+Note: Spring Boot will take care of configurations required for our application.
+
+=> We can do rapid development using Spring Boot
+
+
+
+
+UI Technologies
++++++++++++++++
+HTML & CSS
+Java Script
+Boot Strap
+Angular
+React JS
+
+Realtime Tools
+++++++++++++++
+Maven
+Git Hub
+JIRA
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-------------------------------------------------------------------------------------------------
+Spring Framework
+------------------------------------------------------------------------------------------------
+
+1) What is Programming Language ?
+
+2) What is Framework ?
+
+
+-> Programming Language used by humans to communicate with Computers.
+-> Programming Language contains set of instructions & syntaxes
+
+		Ex : C, C++, Java, C#, Python etc.....
+
+-> Framework means semi-developed software.
+-> Frameworks provides some common logics which are required for application development
+
+				Ex: Hibernate, Struts, Spring etc...
+
+-> If we use framework in our application development then we need to focus only on business logic
+   (framework will provide common logics)
+
+
+Hibernate : It is an ORM framework. Used to develop only persistence layer of our application
+
+Struts : It is a web framework. Used to develop only web layer of our application.
+
+Spring : It is an application development framework. Entire project can be developed by using this.
+
+				(we can do application end to end development)

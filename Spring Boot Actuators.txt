@@ -1,0 +1,92 @@
+######################
+Spring Boot Actuators
+######################
+pow feature
+monitor and manage our app
+prod ready feature
+
+
+-> Actuator is one of the powerful feature introduced in Spring Boot
+
+-> Actuators are used to monitor and manage our application
+
+-> Actuators are giving Production ready features for our boot application
+
++++++++++++++++++
+Actuator Endpoints
++++++++++++++++++
+
+/health : To get application health status[default]
+
+/info : To get application information
+
+/beans : To get what beans loaded by our application
+
+/mappings: To get what URL patterns available in our application
+
+/configProps : To get configuration properties loaded by our application
+
+/heapdump : To download heap data
+
+/threaddump : To get threads information
+
+/shutdown : To stop our application (This is special, it is binded to POST request(use postman), all are mapped to get requese)
+
+
+=> To work with actuators we have to use 'spring-boot-starter-actuator' dependency
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+-> We can see actuator exposed endpoints using below URL
+
+		URL : http://localhost:8080/actuator
+
+
+Note: /health is a default endpoint which we can access directly
+
+
+-> We can expose other actuator endpoints using below property
+
+
++++++++++++++++
+application.yml
++++++++++++++
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+Note: To expose endpoints using application.properties we will use below property
+
+management.endpoints.web.exposure.include=*
+
+
+
++++++++++++++++++++
+Working with shutdown
+++++++++++++++++++++
+
+-> IT is used to stop our application
+-> We need to enable this manually
+-> It is binded to http post request
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+
+
+
+
+
+
+

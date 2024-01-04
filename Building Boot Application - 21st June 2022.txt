@@ -1,0 +1,274 @@
+Spring Boot & Microservices
++++++++++++++++++++++++++
+
+-> Spring is an application development framework
+
+-> By using spring framework we can develop below types of applications
+			
+				1) standalone applications
+				2) web applications
+				3) distributed applications
+
+-> Spring framework developed in modular fashion
+
+-> Spring framework came into market in 2004
+
+-> The current version of Spring is 5.x 
+
+-> Spring is non-invasive framework
+
+-> Spring is versatile framework
+
+
+Note: When we develop application by using spring, programmer is responsible to take care of configurations required for the application.
+
+-> After few years Spring team realized that for every project configurations are required
+
+-> Every Programmer dealing with configurations in the project
+
+-> The configurations are common in the project
+
+
+=> To overcome configuration problems spring team released Spring Boot into market
+
++++++++++++++++
+Spring Boot
+++++++++++++++++
+
+=> It is another approach to develop spring based applications with less configurations
+
+=> Spring Boot is an enhacement of Spring framework
+
+=> Spring Boot internally uses Spring framework only
+
+=> What type of applications we can develop using spring framework, same type of applications can be developed by using Spring boot also
+
+
+	Spring Boot = Spring Framework - XML Configurations
+
+
+++++++++++++++++++++++++
+Spring Boot Advantages
+++++++++++++++++++++++++
+
+1) Auto Configuration
+
+2) POM starters
+
+3) Embedded Servers
+
+4) Rapid Development
+
+5) Actuators
+
+
+
+-> Autoconfiguration means boot will identify the configurations required for our application and it will provide that configurations
+
+			- Starting IOC container
+			- Creating Connection Pool
+			- Creation SMTP Connections
+			- Web Application Deployment to server
+			- Depedency Injections etc....
+
+-> POM starters are nothing but dependencies that we use to develop our application
+
+			a) web-starter
+			b) jdbc-starter
+			c) security-starter
+			d) mail-starter
+
+-> Boot will provide web server to run our web applications. Those servers are called as Embedded Server
+
+			a) Tomcat (default)
+			b) Jetty
+			c) Netty
+
+-> Rapid Development means fast development. We can focus only on business logic because Boot will take care of configurations.
+
+-> Actuators are used to monitor and manage our application. Actuators providing production-ready features for our application.
+
+			a) How many classes loaded
+			b) how many objects created
+			c) how many threads are running
+			d) URL Mappings Available
+			e) Health of the project etc...
+
+
++++++++++++++++++++++++++++++++++
+Building  First Spring Boot Application
++++++++++++++++++++++++++++++++++
+
+-> We can create boot application in 2 ways
+
+1) using Spring Initializr website (start.spring.io)
+
+2) using IDE
+
+
+Creating project using start.spring.io
+++++++++++++++++++++++++++++++++
+
+-> Goto start.spring.io website and generate the project
+
+-> It will download project in zip file 
+
+-> Extract that zip file
+
+-> Go t IDE -> New -> Import -> Maven -> Existring Maven Project -> Select Project path upto pom.xml file location
+
+
+Creating project using STS IDE
+++++++++++++++++++++++++
+
+-> Go to STS IDE
+
+-> New -> Spring Starter Project -> Fill the details and create the projet
+
+Note: STS IDE will use start.spring.io internally to create the project
+
+Note: TO create spring boot application internet connection is mandatory for our application.
+
+
+Spring Boot Application Folder Structure
++++++++++++++++++++++++++++++++++++
+
+- 09-Spring-Boot-App  -------------- Project Name (root folder)
+
+	- src/main/java		
+			- Application.java   (This is start class)
+
+	- src/main/resources
+			- application.properties or application.yml
+
+	- src/test/java
+			- ApplicationTests.java
+
+	- Maven Dependencies   (It contains jars which got downloaded)
+
+	- target  (it contains .class files)
+
+	- pom.xml (Maven configuration file)
+
+
+-> We will write our source code under src/main/java folder
+
+-> We will create our configuration files under src/main/resources folder
+
+-> We will create Junit class under src/test/java folder
+
+-> Project dependencies we will configure in pom.xml file
+
+-> POM stands for Project Object Model
+
+
++++++++++++++++++++++++++++++++
+What is start class in Spring Boot?
++++++++++++++++++++++++++++++++
+
+-> When we create boot application by default one java class will be created with a name Application.java i.e called as Start class of spring boot
+
+-> Start class is the entry point for boot application execution
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+}
+
+=> @SpringBootApplication annotation is equal to below 3 annotations
+
+@SpringBootConfiguration
+@EnableAutoConfiguration
+@ComponentScan
+
+=> SpringApplication.run (..) method contains bootstrapping logic. It is the entry point for boot application execution
+		
+			- start stop watch
+			- start listners
+			- prepareEnv
+			- print Banner
+			- create IOC container
+			- refresh Container
+			- stop that stop watch
+			- print time taken to start application
+			- call runners
+			- return IOC reference
+
+
+
+
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
