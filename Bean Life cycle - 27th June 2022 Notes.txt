@@ -43,7 +43,7 @@ Note: When we develop application by using spring, programmer is responsible to 
 => To overcome configuration problems spring team released Spring Boot into market
 
 +++++++++++++++++++++
-WHAT IS Spring Boot
+WHAT IS Spring Boot[AEI]
 ++++++++++++++++++++++
 SB IS AN APPROACH
 
