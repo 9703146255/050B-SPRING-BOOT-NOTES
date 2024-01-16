@@ -230,6 +230,9 @@ public class Application {
  
  @EnableAutoConfiguration
  ========================
+ Ioc contaner will identifies what are the dependencies required for our application development
+ based on dependencies 
+
  it used "to guess the components/dependencies" that are required to run our application
  
  @ComponentScan
@@ -478,7 +481,7 @@ What is @Bean annotation
 
 -> @Bean is a method level annotation
 
--> When we want to customize any object creation then we will use @Bean annotation for that
+-> If we want to customize any object creation then we will use @Bean annotation for that
 
 @Configuration
 public class AppConfig {
@@ -492,7 +495,7 @@ public class AppConfig {
 }
 
 
-Note: @Bean method we can write in any spring bean class but recommended to write in @Configuration class like above.
+Note: @Bean Annotation we can write "in any spring bean class" but recommended to write in @Configuration class like above.
 
 ==============================================================================================
 
@@ -533,7 +536,8 @@ How to represent java class as a Spring Bean?
 
 Note: All the above annotations are class level annotations but  @Bean is method level annotation
 
-
+@Component
+==========
 -> @Component is a general purpose annotation to represent java class as Spring Bean
 
 
