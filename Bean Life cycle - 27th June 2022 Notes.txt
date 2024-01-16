@@ -230,7 +230,7 @@ public class Application {
  
  @EnableAutoConfiguration
  ========================
- it used "to guess the components" that are required to run our application
+ it used "to guess the components/dependencies" that are required to run our application
  
  @ComponentScan
  ==============
@@ -238,10 +238,11 @@ public class Application {
 
 
 
-
-
 =====================================================================================================================
-=> SpringApplication.run (..) method contains bootstrapping logic. It is the entry point for boot application execution
+what is the run() method in spring boot[sspp-cr
+=====================================================================================================================
+=> SpringApplication.run (..) method contains bootstrapping logic.
+=> It is the entry point for boot application execution
 		
 			- start stop watch
 			- start listners
@@ -268,7 +269,7 @@ Banner in Spring Boot
 
 Note: Generate Ascii text[AT] from here : https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Ashok%20IT
 
--> Spring Boot banner having below 3 modes
+-> Spring Boot banner having below 3 modes[clo]
 
 	1) console  ---- > it is default mode
 	2) log
@@ -297,7 +298,7 @@ How ioc container will start in Spring Boot ?
 
 
 ++++++++++++++++++++
-Runners in Spring Boot
+Runners in Spring Boot[RI]
 ++++++++++++++++++++
 
 => Runners are getting called at the end of run ( ) method
@@ -404,7 +405,7 @@ What is ComponentScan ?
 
 -> Component Scanning will start from base package
 
-Note: The package which contains start class is called as base package.
+Note: The package which contains "start class" is called as base package.
 
 -> After base packge scanning completed it will scan sub packages of base package.
 
