@@ -106,7 +106,7 @@ Spring Boot Advantages      AP ERA
 
 			a) Tomcat (default)
 			b) Jetty
-			c) Netty
+			c) Netty[When we add webflux dep it will come by default]
 
 
 4) Rapid Development
