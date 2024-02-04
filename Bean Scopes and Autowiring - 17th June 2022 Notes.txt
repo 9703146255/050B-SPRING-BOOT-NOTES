@@ -153,7 +153,8 @@ Java Road Map
 
 => Design Patterns
 
-
+Spring Boot
+============
 => Spring Boot is just one approach to develop Spring Based applications with less configurations.
 
 => Spring Boot came into market with Auto Configuration concept
@@ -203,15 +204,26 @@ Spring Framework
    (frameworks will provide common logics required for our application)
 
 
-Hibernate : It is an ORM framework. Used to develop only persistence layer of our application
+Hibernate :
 
-Struts : It is a web framework. Used to develop only web layer of our application.
+	==>	It is an ORM framework.
 
-Spring : It is an application development framework. Entire project can be developed by using this.
+	==>	It is Used to develop "only persistence layer" of our application
+
+Struts :
+
+	==>	It is a web framework. 
+
+	==>	It Used to develop "only web layer" of our application.
+
+Spring : 
+	==>	It is an application development framework. 
+	
+	==>	"Entire project can be developed" by using this.
 
 				(we can do application end to end development)
 --------------------------------------------------------------------------------------------------
-Spring Advantages
+Spring Advantages[FO,LW,VRSTL
 --------------------------------------------------------------------------------------------------
 
 -> It is a free & open source framework
@@ -220,13 +232,13 @@ Spring Advantages
 
 -> Spring is versatile framework 
 
-(Spring can be integrated with any other java framework available in the market)
+(Spring can be integrated with  ==>  [any other java framework] available in the market)
 
--> Spring is non-invasive framework 
+-> Spring is non o-invasive framework 
 
 (spring framework will not force us to use framework related interfaces or classes)
 
-Ex: To create a servlet we need to implement Servlet Interface or we need to extend HttpServlet or GenericServlet. That means servlet is forcing us to use Servlets specific interface or classes.
+Ex: To create a servlet we need to implement Servlet Interface or we need to extend HttpServlet or GenericServlet. That means servlet is forcing us to "use Servlets specific interface or classes".
 
 Note: In Spring we can create a simple pojo and we can ask spring to execute our pojo
 
