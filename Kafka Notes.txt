@@ -11,7 +11,7 @@ Apache Kafka
 
 -> Kafka works based on Publisher and Subscriber Model[pub,sub]
 
-Note:  Kafka will act as a mediator / broker between Publisher and Subscriber
+Note:  Kafka will acts as a mediator / broker between Publisher and Subscriber
 
 
 -> The application which is publishing message to kafka is called Publisher
