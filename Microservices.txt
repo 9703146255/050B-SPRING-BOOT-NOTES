@@ -1,3 +1,33 @@
+Monlith Vs Microservices
+1) Monolith Architecture
+	A)Advantages
+	B)Dis-Advantages
+
+2) Microservices Architecture
+	A)Advantages
+	B)Dis-Advantages/Challenges
+
+3)Microservices Architecture[architectural design pattern]
+
+1)  API Gateway	 {ZUUL PROXY  X}[old] ==>  {  SPRING CLOUD==>Gateway[SCG] } from latestVersion
+
+2)  Service Registry	[Eureka server, SCNL]	=>[SPRING CLOUD ==>NETFLIX LIBRARY]
+
+3)  Admin Server
+
+4)  Zipkin Server
+
+5)  Services (REST APIs)
+
+6) FeignClient	==>	classes  	
+
+7) WebClient	==>	interfaces
+
+8) Load Balancing 
+
+
+
+
 +++++++++++++++++++++++
 Monlith Vs Microservices
 +++++++++++++++++++++++
