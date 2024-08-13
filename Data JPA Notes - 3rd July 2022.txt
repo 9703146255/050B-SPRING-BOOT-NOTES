@@ -31,8 +31,9 @@ We can perform DB operations using Data JPA in below 3 ways
 	    	3) Native SQL Vs HQL
 
 JpaRepository
-Pagination
-Query By Example (QBE)
+14) Pagination
+15) Query By Example (QBE)
+16) SORTING
 Timestamping in Data JPA
 1) @CreationTimestamp
 
