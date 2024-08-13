@@ -16,7 +16,7 @@
 12) findby methods
 13) custom queries
 
-
+NOTE::
 We can perform DB operations using Data JPA in below 3 ways
 
 1) Predefined methods
