@@ -1,3 +1,22 @@
+01)  Spring Data JPA
+02)  CrudRepository
+03)  JpaRepository
+04)  Hibernate Vs Data JPA
+05)  Environment Setup
+06)  MySQL DB Properties
+07)  Entity Class
+	@Entity 
+	@Table
+	@Id
+	@Column
+08)  Repository Interfaces
+09)  Datasource properties
+10)  ORM Properties
+11)  CrudRepository methods(12) ==> find(3),save(2),exist,delete(5),count
+12) findby methods
+13) custom queries
+
+
 Spring Data JPA
 +++++++++++++
 ==>to develop "persistence logic"
@@ -79,7 +98,12 @@ EVERY  OBJ REF VAR> DB ROW
 
 
 Entity Class
-++++++++++
+++++++++++++++
+@Entity 
+@Table
+@Id
+@Column
+
 
 -> The java class which is mapped with DB table is called as Entity class
 
