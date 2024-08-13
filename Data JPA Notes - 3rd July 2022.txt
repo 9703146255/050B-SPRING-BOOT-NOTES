@@ -1,3 +1,45 @@
+01)  Spring Data JPA
+02)  CrudRepository
+03)  JpaRepository
+04)  Hibernate Vs Data JPA
+05)  Environment Setup
+06)  MySQL DB Properties
+07)  Entity Class
+	@Entity 
+	@Table
+	@Id
+	@Column
+08)  Repository Interfaces
+09)  Datasource properties
+10)  ORM Properties
+11)  CrudRepository methods(12) ==> find(3),save(2),exist,delete(5),count
+12) findby methods
+13) custom queries
+
+
+We can perform DB operations using Data JPA in below 3 ways
+
+1) Predefined methods
+
+2) findByXXX methods
+
+3) Custom Queries ( @ Query )
+		1) HQL Queries
+
+		2) Native SQL Queries
+			 
+	    	3) Native SQL Vs HQL
+
+JpaRepository
+Pagination
+Query By Example (QBE)
+Timestamping in Data JPA
+1) @CreationTimestamp
+
+2) @UpdateTimestamp
+
+
+
 Spring Data JPA
 +++++++++++++
 
