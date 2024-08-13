@@ -34,10 +34,9 @@ JpaRepository
 14) Pagination
 15) Query By Example (QBE)
 16) SORTING
-Timestamping in Data JPA
-1) @CreationTimestamp
-
-2) @UpdateTimestamp
+17)Timestamping in Data JPA
+	1) @CreationTimestamp
+	2) @UpdateTimestamp
 
 
 
