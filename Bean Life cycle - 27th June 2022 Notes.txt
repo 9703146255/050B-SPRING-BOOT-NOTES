@@ -163,6 +163,7 @@ Note: TO create spring boot application internet connection is mandatory for our
 
 Spring Boot Application Folder Structure
 +++++++++++++++++++++++++++++++++++
+When we create spring boot application by default we will get app.java called start class.
 When we create boot application by default we will get ==>		Application.java   (This is start class)  ,  application.properties or application.yml , ApplicationTests.java
 
 - 09-Spring-Boot-App  -------------- Project Name (root folder)
