@@ -1,0 +1,73 @@
+##############
+Spring Security
+###############
+
+-> To implement security for our applications Spring provided 'security' module
+
+-> To use Spring Security in our project 'spring-security-starter' we need to add in pom.xml file
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+-> By default it will secure all the endpoints of our application
+
+		Default uname : user
+		Default Pwd: Will be printed on the console
+
+-> To override default credentials we can configure credentails in application.properties file
+
+spring.security.user.name=admin
+spring.security.user.password=admin@123
+
+
+-> Create Rest Controller class with required method
+
+
+#####################################
+Rest Client To access Secured REST API
+#######################################
+
+@Service
+public class WelcomeService {
+	
+	private String apiUrl = "http://localhost:8080";
+
+	public void invokeWelcomeApi() {
+		
+		RestTemplate rt = new RestTemplate();
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.setBasicAuth("admin", "admin@123");
+		
+		HttpEntity<String> reqEntity = new HttpEntity<>(headers);
+		
+		ResponseEntity<String> responseEntity = rt.exchange(apiUrl, HttpMethod.GET, reqEntity, String.class);
+		
+		String body = responseEntity.getBody();
+		
+		System.out.println(body);
+	}
+	
+	
+	public void invokeWelcome() {
+		
+		WebClient webClient = WebClient.create();
+		
+		String block = webClient.get()
+					  		   .uri(apiUrl)
+					  		   .headers(headers -> headers.setBasicAuth("admin", "admin@123"))
+					  		   .retrieve()
+					  		   .bodyToMono(String.class)
+					  		   .block();
+		
+		System.out.println(block);
+	}
+	
+}
+
+
+
+

@@ -173,7 +173,7 @@ spring.mvc.view.suffix=.jsp
 What is Context-Path ?
 ++++++++++++++++++++
 
--> Context-Path represents name of our application
+-> Context-Path represents "name of our application"
 
 -> In Spring Boot, the default context-path is empty
 
@@ -209,7 +209,7 @@ Sending Data From Controller To UI
 
 
 
-################# Approach-1   (ModelAndView) #####################
+################# Approach-1   (ModelAndView) #####################This is a class
 
 @Controller
 public class WelcomeController {
@@ -693,7 +693,7 @@ Thymeleaf
 
 -> JSP can't be executed in browser directley
 
--> When the request comes to JSP then internally JSP will be converted to Servlet and that servlet will send response to browser
+-> When the request comes to JSP then internally JSP will be converted to Servlet and that servlet will send response to browser[req[jsp]==>Servlet==>req(browser)]
 
 -> When we use JSP for presentation then burden will be increased on server because every JSP should be converted into Servlet to produce the response to browser.
 

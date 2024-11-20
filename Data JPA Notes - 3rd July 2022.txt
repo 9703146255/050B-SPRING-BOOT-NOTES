@@ -377,21 +377,22 @@ Custom Queries
 		2) Native SQL Queries
 
 
-Native SQL Vs HQL
-++++++++++++++++
+Native SQL Vs HQL 			Native Sql--> DB
+++++++++++++++++ 			HQL -->SQL(DIALETCT)-> DB
 
 -> Native SQL queries are DB dependent
 -> HQL Queries are DB in-dependent
 
--> Native Queries will use table name and column names in the query directley
--> HQL queris will use 'Entity Class Name' and 'Entity Class Variable Names' in the query
+-> Native Queries will use "table name and column names" in the query directley
+-> HQL queris will use "Entity Class Name" and "Entity Class Variable Names" in the query
 
 -> Native SQL queries will execute in Database Directley
 -> HQL queries can't execute in DB directley (HQL queries will be converted to SQL query using Dialect class before execution)
 
 Note: In Hibernate we have Dialect classes for every database
 
--> As SQL queries are executing directley in DB hence performance wise they are good. HQL queries should be converted before execution hence HQL queries will take more time than SQL queries for execution.
+-> As SQL queries are executing directley in DB hence performance wise they are good. 
+-> HQL queries should be converted before execution hence HQL queries will take more time than Native SQL queries for execution.
 
 
 -> Performance wise SQL queries are good
@@ -458,19 +459,21 @@ We can perform DB operations using Data JPA in below 3 ways
 
 3) Custom Queries ( @ Query )
 
+CrudRepository  --> CRUD Operations
+JpaRepostory    --> CRUD Operation + Pagination + Sorting +QuaryByExample
 
 
 ++++++++++++++++++
 JpaRepository
 ++++++++++++++++++
 
--> It is a predefined interface available in data jpa
+-> It is a "predefined interface" available in "data jpa"
 
 -> Using JpaRepository interface also we can perform CRUD operations with DB tables
 
 -> JpaRepository also having several methods to perform CRUD operations
 
--> JpaRepository having support for Pagination + Sorting + QBE (Query By Example)
+-> JpaRepository having support for Pagination + Sorting + QBE (Query By Example)[PSQ]
 
 
 Note: CrudRepository interface doesn't support Pagination + Sorting + QBE
@@ -478,7 +481,7 @@ Note: CrudRepository interface doesn't support Pagination + Sorting + QBE
 
 Sorting
 ++++++++
--> Sorting is used to sort the records either in ascending or in descending order
+-> Sorting is used to sort the records either in "ascending or in descending order"
 
 -> We can pass Sort object as parameter for findAll ( ) method like below
 
@@ -530,7 +533,7 @@ Pagination
 Query By Example (QBE)
 +++++++++++++++++++++
 
--> It is used to prepare the query dynamically
+-> It is used to prepare/Construct the query dynamically
 
 -> To implement Dynamic Search Option we can use QBE concept
 

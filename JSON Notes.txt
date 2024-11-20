@@ -1,6 +1,13 @@
 ########
 JSON
 ########
+JavaScriptObjectNotation
+Key-Value pair
+Intereoperable
+light-weight
+Human & Machine readable
+Today World PEOPLES using B2B(Communication)
+
 
 -> JSON stands for Java Script object notation
 

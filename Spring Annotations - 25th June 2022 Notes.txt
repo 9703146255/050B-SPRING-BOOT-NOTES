@@ -15,7 +15,7 @@ CV==>5.X
 
 -> By using spring framework we can develop below types of applications
 			
-				1) standalone applications ex:ms-office
+				1) standalone/console based applications ex:ms-office
 				2) web applications    :ex: fb,mail
 				3) distributed applications
 
@@ -45,7 +45,7 @@ Note: When we develop application by using spring, programmer is responsible to 
 Spring Boot
 ++++++++++++++++
 
-=> It is another approach to develop spring based applications with less configurations
+=> It is an approach to develop spring based applications with less configurations
 
 => Spring Boot is an enhacement of Spring framework
 
@@ -54,7 +54,7 @@ Spring Boot
 => What type of applications we can develop using spring framework, same type of applications can be developed by using Spring boot also
 
 
-	Spring Boot = Spring Framework - XML Configurations
+	Spring Boot = Spring Framework - XML Configurations + autoconfigurations
 
 
 ++++++++++++++++++++++++
@@ -72,20 +72,22 @@ Spring Boot Advantages  AP ERA
 5) Actuators
 
 
-1) Auto Configuration
-================
--> Autoconfiguration means boot will identify the configurations required for our application and it will provide that configurations
-
+1) Auto Configuration[it will works based on our added starte]
+=====================
+-> Autoconfiguration means boot will identify the configurations required for our application and it will provide that configurations when needed
+when we add starter web--> it will start the IOC container
+when we add security page it will provide security to our ui
+when we add jpa it will connect with db/give connections
 Start ioc
 create conn pool
 create smtp conn
 dep->into server
 
-			- Starting IOC container
-			- Creating Connection Pool
-			- Creation SMTP Connections
-			- Web Application Deployment to server
-			- Depedency Injections etc....
+			- Starting IOC container[when we add starter web]
+			- Creating Connection Pool[when we add starter jpa]
+			- Creation SMTP Connections[when we add mail starter]
+			- Web Application Deployment to server[when we add starter-web]
+			- Depedency Injections etc....[when we add starter-web]
 
 
 
@@ -93,7 +95,7 @@ dep->into server
 ============
 dep==>used for app dev
 pom=>DEP
--> POM starters are nothing but dependencies that we use to develop our application
+-> POM starters are nothing but maven dependencies that we use to develop our application
 
 			a) web-starter
 			b) jdbc-starter

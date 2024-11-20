@@ -4,7 +4,7 @@ ADF
 WE CAN DEV 3 TYPES
 FOLLOW MOD FASHION
 SPRING CAME INTO 2004
-CURRENT VERSION OF SPRING IS 6.X
+CURRENT VERSION OF SPRING IS 6.X[2022]
 FREE AND OPEN SOURCE
 
 
@@ -33,7 +33,7 @@ FREE AND OPEN SOURCE
 
 Note: When we develop application by using spring, programmer is responsible to take care of configurations required for the application.
 
--> After few years Spring team realized that for ""every project"" configurations are required"
+-> After few years Spring team realized that for "every project" configurations are required"
 
 -> ""Every Programmer"" dealing with configurations in the project
 
@@ -115,7 +115,8 @@ Spring Boot Advantages      AP ERA
 
 5) Actuators[monitor and manage],production ready feature
 =========================
--> Actuators are used to monitor and manage our application. Actuators providing "production-ready" features for our application.
+-> Actuators are used to "monitor and manage" our application. 
+-> Actuators providing "production-ready" features for our application.
 
 			[CLS,OBJ,THREADS[run,not run],MAPPING,HEALTH]
 			a) How many classes loaded
@@ -162,9 +163,12 @@ Note: TO create spring boot application internet connection is mandatory for our
 
 Spring Boot Application Folder Structure
 +++++++++++++++++++++++++++++++++++
-When we create boot application by default we will get ==>		Application.java   (This is start class)  ,  application.properties or application.yml , ApplicationTests.java
+When we create boot application by default we will get 
+==>		Application.java   (This is start class)  ,  
+==>		Application.properties or application.yml , 
+==>		ApplicationTests.java
 
-- 09-Spring-Boot-App  -------------- Project Name (root folder)
+	- 09-Spring-Boot-App  -------------- Project Name (root folder)
 
 	- src/main/java		
 			- Application.java   (This is start class)

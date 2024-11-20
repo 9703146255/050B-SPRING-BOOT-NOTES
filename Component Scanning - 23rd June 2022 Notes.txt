@@ -1,5 +1,12 @@
 Spring Boot & Microservices
 +++++++++++++++++++++++++
+ADF
+DIFF TYPES OF APPS
+MODULAR FASHION
+CAME 2004(1.X)
+CURRENT (6.X)
+NON-INVESIVE FWK
+VERSATILE FWK
 
 -> Spring is an application development framework
 
@@ -9,18 +16,20 @@ Spring Boot & Microservices
 				2) web applications
 				3) distributed applications
 
--> Spring framework developed in modular fashion
+-> Spring framework developed in "modular fashion"
 
--> Spring framework came into market in 2004
+-> Spring framework "came into market in "2004"
 
--> The current version of Spring is 5.x 
+-> The current version of Spring is 6.x 
 
 -> Spring is non-invasive framework
 
 -> Spring is versatile framework
 
 
-Note: When we develop application by using spring, programmer is responsible to take care of configurations required for the application.
+Note: 
+->	When we develop application by using spring, 
+->	programmer is responsible to take care of "configurations required" for the application.
 
 -> After few years Spring team realized that for every project configurations are required
 
@@ -34,6 +43,10 @@ Note: When we develop application by using spring, programmer is responsible to 
 +++++++++++++++
 Spring Boot
 ++++++++++++++++
+SB Another approach
+SB Enhancement
+SB Internally uses SF.
+What Type of APPS using spring SAME type using SB
 
 => It is another approach to develop spring based applications with less configurations
 
@@ -63,7 +76,8 @@ Spring Boot Advantages
 
 
 
--> Autoconfiguration means boot will identify the configurations required for our application and it will provide that configurations
+-> Auto->configuration means 
+	->"boot will identify" the configurations required for our application and it will provide that configurations
 
 			- Starting IOC container
 			- Creating Connection Pool
@@ -71,22 +85,27 @@ Spring Boot Advantages
 			- Web Application Deployment to server
 			- Depedency Injections etc....
 
--> POM starters are nothing but dependencies that we use to develop our application
+-> POM starters are nothing but "dependencies" that we use to develop our application[POMS == DEPENDENCIES]
 
 			a) web-starter
 			b) jdbc-starter
 			c) security-starter
 			d) mail-starter
 
--> Boot will provide web server to run our web applications. Those servers are called as Embedded Server
+->Embedded Servers:: Boot will provide web server to run our web applications. Those servers are called as Embedded Server
 
 			a) Tomcat (default)
 			b) Jetty
 			c) Netty
 
--> Rapid Development means fast development. We can focus only on business logic because Boot will take care of configurations.
+-> Rapid Development means 
+			->	fast development. 
+			->	We can focus only on business logic because Boot will take care of configurations.
 
--> Actuators are used to monitor and manage our application. Actuators providing production-ready features for our application.
+-> Actuators are used to 
+			->	monitor and 
+			->	manage our application. 
+			->	Actuators providing production-ready features for our application.
 
 			a) How many classes loaded
 			b) how many objects created

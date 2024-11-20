@@ -1,0 +1,30 @@
+##############
+Apache Kafka
+#############
+
+
+-> Apache Kafka is an open source distributed streaming platform
+
+-> Apache Kafka is used to process real time data
+
+-> We will use Apache Kafa as a message broker for our applications
+
+-> Kafka works based on Publisher and Subscriber Model
+
+Note:  Kafka will act as a mediator / broker between Publisher and Subscriber
+
+
+-> The application which is publishing message to kafka is called Publisher
+
+-> The application which is subscribing message from kafka is called Subscriber
+
+
+Note: Using apache kafka we can develop Event Driven Microservices
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+==>  Kafka - Workshop Video : https://youtu.be/VInk1_9vvCY
+
+==> Kafka Notes + Example : https://github.com/ashokitschool/ashokit_weekend_workshops.git
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -4,33 +4,25 @@ Monlith Vs Microservices
 
 Application can be developed in 2 ways
 
-1) Monolith Architecture[flight,Hotel,Cab,Train and Bus  ]
+1) Monolith Architecture
 
 2) Microservices Architecture
 
--> If we develop 	==>	all the functionalities	==>	 in one single application then it is called as Monolith Application
+-> If we develop all the functionalities in one single application then it is called as Monolith Application
 
 ++++++++++
-Advantages	DEV,  DEBUG, TEST, DEPLOY, KT SESSION, PERF
+Advantages
 ++++++++++
 1) Development is easy
-2) Easy Debugging 
-3) Easy Testing 
-4) Deployment is easy
-5) Performance
+2) Deployment is easy
+3) Performance
+4) Easy Testing
+5) Easy Debugging
 6) KT is easy
 
 ++++++++++++++
 Dis-Advantages
 ++++++++++++++
-. POINT
-WHOLE APP  RE-DEP
-
-SCALA
-RELA
-AVAIL
-
-
 
 1) Single point of failure
 2) Whole Application Re-Deployment
@@ -38,24 +30,13 @@ AVAIL
 4) Reliability (Strong)
 5) Availability (Zero Downtime)
 
-
-2) Microservices Architecture
-========================
-=> If we develop the functionalities ==>	in multiple services/apis 	==>	then it is called as Microservices Architecture Based Application.
+=> If we develop the functionalities in multiple services/apis then it is called as Microservices Architecture Based Application.
 
 => Every Microservice will have its own goal
 
 ++++++++++
 Advantages
 ++++++++++
-==>LOOSE,
-
-==>FAST DEV QUICK,
-
-==>NO SINGLE POINT FAILURE,
- 
-===>TECH INDE
-
 
 1) Loosely coupled
 2) Fast Development
@@ -67,7 +48,7 @@ Advantages
 
 
 ++++++++++++++
-Challenges       BLV-->TD[microservice balavanthudu]
+Challenges
 ++++++++++++++
 
 1) Bounded context (identifying no.of services to develop)
@@ -83,15 +64,12 @@ Challenges       BLV-->TD[microservice balavanthudu]
 
 
 ########################
-Microservices Architecture[architectural design pattern]
+Microservices Architecture
 ########################
-=>architectural design pattern
-=> no fixed architecture 
-=> People are customizing
 
 -> Microservices is an architectural design pattern to develop our applications
 
--> There is no fixed architecture for "Microservices Based Applications"
+-> There is no fixed architecture for Microservices Based Applications
 
 -> People are customizing Microservices Architecture according to their requirement
 
@@ -99,97 +77,45 @@ Microservices Architecture[architectural design pattern]
 *********** Let us see generalized architecture of Microservices ***************
 
 
+1) Service Registry
 
-1) API Gateway	 {ZUUL PROXY  X}[old] ==>  {  SPRING CLOUD==>Gateway[SCG] } from latestVersion
+2) Admin Server
 
-2) Service Registry	[Eureka server, SCNL]	=>[SPRING CLOUD ==>NETFLIX LIBRARY]
+3) Zipkin Server
 
-3) Admin Server
+4)  Services (REST APIs)
 
-4)  Zipkin Server
+5) FeignClient
 
-5)  Services (REST APIs)
-
-6) FeignClient	==>	classes  	
-
-7) WebClient	==>	interfaces 	
-
-
-
-1)API Gateway
-============
--> Api Gateway will act as an Entry point for our backend apis
-
--> It acts as mediator between endusers and backend apis
-
--> API Gateway contains "Filters" and "Routing"
-
--> Filters we can use to authenticate incoming requests			FILTER		=>	[AIR]
-
--> Routing will decide which request should go to which backend api		ROUTING		=>    WHICH REQ SHOULD GO TO WHICH BACKEND API
-
-Note: In previous versions we have Zuul Proxy as API Gateway but now it got removed from latest version of boot
-
--> Spring Cloud Gateway we can use as API Gateway for our application
+6) API Gateway
 
 
 
 
-2) Service Registry
-===================
-	TO REGSTR ALL BACKEND API
-	MANTAIN ALL SERVICE ==>BSUN(SNAMES,SURLS,SERVICES]
-	EurekaServer ==>	service registry
-	
-	-> ServiceRegistry is used to "register" all our backend services/apis
+-> ServiceRegistry is used to register all our backend services/apis
+-> Service Registry will maintain services names, urls and status of each service
+-> We can use EurekaServer as a service registry
 
-	-> Service Registry will "maintain" service status, urls ,names  , and of each service[SUN]
-
-	-> We can use EurekaServer as a service registry
-
-Note: EurekaServer provided by Spring Cloud Netf lix Library
+Note: EurekaServer provided by Spring Cloud Netflix Library
 
 
-3) Ad m in Server
-============
--> Ad m inServer is used to "monitor" and "manage" all our backend services at one place
+-> AdminServer is used to monitor and manage all our backend services at one place
+-> AdminServer will provide user interface to monitor and manage our services
+-> Using AdminServer user interface we can access Actuator Endpoints of our services at one place
 
--> AdminServer will provide UI to monitor and manage our services
-
--> Using AdminServer user interface we can access Actuator Endpoints of our services ==> at one place
-
-Note: AdminServer and Admin Client provided by 'Code Centric' company (we can integrate with boot)[A-S/C][CODESCENTRIC]
+Note: AdminServer and Admin Client provided by 'Code Centric' company (we can integrate with boot)
 
 
-4)  Zipkin Server
-============
-==>Distributed Log Tracing
-==>UI->AED[M]
-==>H Services involve, Wch service take much time to prcs req
-==>3rd party os server
-
--> ZipkinServer is used for	 ==> 	 Distributed Log Tracing
-
--> ZipkinServer will provide	==>	 user interface to monitor application execution details
-
+-> ZipkinServer is used for Distributed Log Tracing
+-> ZipkinServer will provide user interface to monitor application execution details
 -> How many services involved and which service took more time to process the request can be monitored using Zipkin
 
 Note: Zipkin is third party open source server (can be integrated with spring boot)
 
-5)  Services (REST APIs)
-===================
-bs->rest[apis]->micro services
-BR API-> actual business logic
-1p->mult rest apis
-each bck api client for SR,AD,ZS
-
 
 -> Backend services are nothing but REST APIs (which are also called as Microservices)
-
 -> Backend REST APIs contains actual business logic of our application
-
 -> One project will have multiple REST APIs in the backend
-
 -> Each Backend api will act as client for Service Registry + Admin Server + Zipkin Server
 
 
@@ -201,6 +127,16 @@ each bck api client for SR,AD,ZS
 Note: Based on requirement our backend apis can communicate with 3 rd party apis using RestTemplate or WebClient
 
 
+
+-> Api Gateway will act as an Entry point for our backend apis
+-> It acts as mediator between endusers and backend apis
+-> API Gateway contains Filters and Routing
+-> Filters we can use to authenticate incoming requests
+-> Routing will decide which request should go to which backend api
+
+Note: In previous versions we have Zuul Proxy as API Gateway but now it got removed from latest version of boot
+
+-> Spring Cloud Gateway we can use as API Gateway for our application
 
 
 
@@ -464,7 +400,6 @@ public class MyPreFilter implements GlobalFilter {
 ###################
 Load Balancing
 ###################
-RUN==>1 SERV[all req]->1 serv
 
 -> If we run our application on Single Server then all requests will be sent to single server
 -> Burden will be increased on the server
@@ -473,7 +408,7 @@ RUN==>1 SERV[all req]->1 serv
 
 ********** To overcome above problems we will use Load Balancing concept *****************
 
--> Load Balancing is the process of "distributing load to multiple servers"
+-> Load Balancing is the process of distributing load to multiple servers
 
 
 ##################################

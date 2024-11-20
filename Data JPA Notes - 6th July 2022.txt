@@ -777,15 +777,15 @@ TX management in Data JPA
 
 -> Unit amount of work is called as Transaction
 
--> When we are performing non  select operations (insert/update/delete) we need to deal with Transactions
+-> When we are performing non-select operations (insert/update/delete) we need to deal with Transactions
 
 -> For select operations transaction is not required (Retrieval)
 
 -> In Data JPA  it is care of transaction managment
 
--> If all operations are successful then we should commit transaction
+-> If all operations are successful then we should commit transaction 					  [ALL(OP)->SUCCESS]COMMIT
 
--> If any operation is failed in the transaction then we need to rollback that transaction
+-> If any operation is failed in the transaction then we need to rollback that transaction[NONE(OP)->IF ANY ONE]ROLLBACK
 
 -> When we are working with transactions we need to ACID properties
 
@@ -798,9 +798,9 @@ I - Isolation
 D - Durability
 
 
--> COMMIT means storing data in database permanently
+-> COMMIT means storing data in "database permanently"
 
--> ROLLBACK means bringing database to previous state
+-> ROLLBACK means bringing "database to previous state"
 
 
 ++++++++++++++++++++++++++Example for Rollback++++++++++++++++++++++++++++++++

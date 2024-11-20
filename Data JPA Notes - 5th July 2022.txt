@@ -620,6 +620,11 @@ Ex : if we take 'price variable with double data type' then it will insert price
 ++++++++++++
 Primary Keys
 +++++++++++
+It is a constrain
+It is a combination of unique and not null
+When we use pk constrain to column that column "should not be null" and "it should be unique"
+Its not rec to set Values to PK
+So we are going to use Generators for this PK.
 
 -> Primary Key is a constraint (rule)
 
@@ -637,15 +642,17 @@ Primary Keys
 
 -> To use Generator we will specify @GeneratedValue annotation
 
+my-AUTO
 
--> In MYSQL Database we will use auto_increment to generate value for primary key. To specify auto_increment we will use IDENTITY generator.
+-> In MYSQL Database we will use "auto_increment" "to generate value for primary key". To specify auto_increment we will use IDENTITY generator.
 
 	@Id
 	@Column(name = "PRODUCT_ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer pid;
 
--> In Oracle database we will use sequence concept to generate value for primary key column. For every primary key one sequence will be created in database
+-> In Oracle database we will use "sequence concept" to generate value for primary key column. 
+-> For every primary key one sequence will be created in database
 
 Ex:
 create sequence product_id_seq
@@ -669,7 +676,7 @@ Composite Primary Keys
 
 -> Table can have more than one primary key column
 
--> If table contains more than one primary key column then those primary keys are called as Composite Primary Keys
+-> If table contains "more than one primary key column" then those primary keys are called as Composite Primary Keys
 
 
 CREATE TABLE ACCOUNTS

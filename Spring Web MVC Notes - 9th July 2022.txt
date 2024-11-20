@@ -11,6 +11,8 @@ Download Course Content : https://ashokitech.com/restful-services-microservices-
 ++++++++++++++
 Spring Web MVC
 +++++++++++++++
+spring web-mvc one mod
+we can dev 2-types of apps[wd]
 
 -> Spring Web MVC is one module available in the spring framework
 
@@ -21,17 +23,21 @@ Spring Web MVC
 			2) Distributed Application (Webservices)
 
 
--> ss communication (C 2 B)
+web apps
+--------
+-> C2B communication (C 2 B)
 
 	Ex: facebook, gmail, linkedin, naukri etc...
 
 
 -> Distributed Applications are meant for Business to Business Communication ( B 2 B )
+
 -> If one application is communicating with another application then we call them as Distributed apps
+
 -> Distributed Applications we can develop in 2 ways
 
-			1) SOAP Webservices
-			2) RESTFul Services
+			1) SOAP Webservices[XML]
+			2) RESTFul Services[REST]
 
 Note: SOAP Webservices & RESTFul Services can be developed using Spring Web MVC
 
@@ -48,6 +54,16 @@ Note: SOAP Webservices & RESTFul Services can be developed using Spring Web MVC
 ++++++++++++++++++++++++++++
 Advantages of Spring Web MVC
 ++++++++++++++++++++++++++++
+Easy we can dev web & dist using web mvc mod
+
+Its supports mult pres techno
+
+I 18 N supports
+ 
+FB & FTL
+
+XML 	<==> 	JAVA OBJECT
+JSON	<==> 	JAVA OBJECT
 
 1) Easily we can develop web & distributed applications using Web MVC module
 
@@ -69,10 +85,15 @@ Spring Web MVC Architecture
 ++++++++++++++++++++++++++
 
 1) Dispatcher Servlet (Front Controller)
+
 2) Handler Mapper
+
 3) Controller
+
 4) Model And View
+
 5) ViewResolver
+
 6) View
 
 
@@ -80,7 +101,9 @@ Spring Web MVC Architecture
 1) Dispatcher Servlet (Front Controller)
 ==============================
 pre-defined servlet class
+
 Front Controller / Framework Servlet
+
 to perform pre-processing and post-processing for every request
 
 -> DispatcherServlet is a pre-defined servlet class in Spring Web MVC
@@ -89,6 +112,9 @@ to perform pre-processing and post-processing for every request
 
 2) Handler Mapper
 ===============
+PD-C
+Identiy RH
+
 pre-defined class
 to identify Request Handler
 which request should be processed by which Controller class
@@ -110,8 +136,11 @@ controller ==> return data==> DS{ModelAndView object}
 
 
 -> Controller is a class which contains logic to handle request and response
+
 -> Controller is also called as Request Handler
+
 -> We will create Controller classes using @Controller annotation
+
 -> Controller will return data to Dispatcher in ModelAndView object
 
 4) Model And View
@@ -132,8 +161,8 @@ to display data in view file ==>ModelAndView
 
 6) View
 =======
--> ViewResolver is used to identify where view files available in our project
--> ViewResolver is responsible to identify physical location of view files
+-> ViewResolver is used to identify "where view files available in our project"
+-> ViewResolver is responsible to identify "physical location of view files"
 
 -> View component is used to render model data on physical view file to display that to end user
 
