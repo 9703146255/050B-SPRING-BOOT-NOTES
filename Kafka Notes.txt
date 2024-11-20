@@ -3,15 +3,15 @@ Apache Kafka
 #############
 
 
--> Apache Kafka is an open source distributed streaming platform
+-> Apache Kafka is ==> an open source ==>  distributed streaming platform
 
--> Apache Kafka is used to process real time data
+-> Apache Kafka is used ==>   to process real time data
 
--> We will use Apache Kafa as a message broker for our applications
+-> We will use Apache Kafka as a message broker for our applications
 
--> Kafka works based on Publisher and Subscriber Model
+-> Kafka works based on Publisher and Subscriber Model[pub,sub]
 
-Note:  Kafka will act as a mediator / broker between Publisher and Subscriber
+Note:  Kafka will acts as a mediator / broker between Publisher and Subscriber
 
 
 -> The application which is publishing message to kafka is called Publisher

@@ -43,7 +43,7 @@ Note: When we develop application by using spring, programmer is responsible to 
 => To overcome configuration problems spring team released Spring Boot into market
 
 +++++++++++++++++++++
-WHAT IS Spring Boot
+WHAT IS Spring Boot[AEI]
 ++++++++++++++++++++++
 SB IS AN APPROACH
 
@@ -106,7 +106,7 @@ Spring Boot Advantages      AP ERA
 
 			a) Tomcat (default)
 			b) Jetty
-			c) Netty
+			c) Netty[When we add webflux dep it will come by default]
 
 
 4) Rapid Development
@@ -123,7 +123,8 @@ Spring Boot Advantages      AP ERA
 			b) how many objects created
 			c) how many threads are running
 			d) URL Mappings Available
-			e) Health of the project etc...
+			e) Health of the project etc...[default]
+                        f) Stop app[post req] using post man we can stop app
 
 
 +++++++++++++++++++++++++++++++++
@@ -163,10 +164,15 @@ Note: TO create spring boot application internet connection is mandatory for our
 
 Spring Boot Application Folder Structure
 +++++++++++++++++++++++++++++++++++
+<<<<<<< HEAD
 When we create boot application by default we will get 
 ==>		Application.java   (This is start class)  ,  
 ==>		Application.properties or application.yml , 
 ==>		ApplicationTests.java
+=======
+When we create spring boot application by default we will get app.java called start class.
+When we create boot application by default we will get ==>		Application.java   (This is start class)  ,  application.properties or application.yml , ApplicationTests.java
+>>>>>>> 9c63f193c93abeae0b7befe698bdc0a6efea3441
 
 	- 09-Spring-Boot-App  -------------- Project Name (root folder)
 
@@ -188,7 +194,7 @@ When we create boot application by default we will get
 
 -> We will write "our source code" under src/main/java folder
 
--> We will create our "configuration files" under src/main/resources folder[db,server,web[prefix, suffix...]
+-> We will create our "configuration files" under src/main/resources folder[db,server,web[prefix, suffix...],html files,js,properties...
 
 -> We will create "Junit class" under src/test/java folder
 
@@ -203,7 +209,7 @@ What is start class in Spring Boot?
 
 -> When we create boot application by default one java class will be created with a name "Application.java" i.e called as Start class of spring boot
 
--> Start class is the entry point for boot application execution
+-> Start class is the[these is ==> entry point for boot application execution
 
 -> boot Application execution start from main method
 
@@ -216,7 +222,7 @@ public class Application {
 }
 
 
-=> @SpringBootApplication annotation is equal to below 3 annotations[BC,EAC,CS]
+=> @SpringBootApplication annotation is equal to below 3 annotations[SEC]
 
 @SpringBootConfiguration
 @EnableAutoConfiguration
@@ -234,7 +240,10 @@ public class Application {
  
  @EnableAutoConfiguration
  ========================
- it used "to guess the components" that are required to run our application
+ Ioc container will identifies what are the dependencies required for our application development
+ based on pom.xml file 
+
+ it used "to guess the components/dependencies" that are required to run our application
  
  @ComponentScan
  ==============
@@ -242,10 +251,11 @@ public class Application {
 
 
 
-
-
 =====================================================================================================================
-=> SpringApplication.run (..) method contains bootstrapping logic. It is the entry point for boot application execution
+what is the run() method in spring boot[sspp-cr
+=====================================================================================================================
+=> SpringApplication.run (..) method contains bootstrapping logic.
+=> It is the entry point for boot application execution
 		
 			- start stop watch
 			- start listners
@@ -272,7 +282,7 @@ Banner in Spring Boot
 
 Note: Generate Ascii text[AT] from here : https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Ashok%20IT
 
--> Spring Boot banner having below 3 modes
+-> Spring Boot banner having below 3 modes[clo]
 
 	1) console  ---- > it is default mode
 	2) log
@@ -301,7 +311,7 @@ How ioc container will start in Spring Boot ?
 
 
 ++++++++++++++++++++
-Runners in Spring Boot
+Runners in Spring Boot[RI]
 ++++++++++++++++++++
 
 => Runners are getting called at the end of run ( ) method
@@ -320,6 +330,8 @@ Use cases
 ---------------
 1) send email to management once application started
 2) read data from db tables and store into cache memory
+3) Load External Configuration Properties:
+4) Initialize Database Connection Pool:
 
 
 @Component								String... args
@@ -408,7 +420,7 @@ What is ComponentScan ?
 
 -> Component Scanning will start from base package
 
-Note: The package which contains start class is called as base package.
+Note: The package which contains "start class" is called as base package.
 
 -> After base packge scanning completed it will scan sub packages of base package.
 
@@ -481,7 +493,7 @@ What is @Bean annotation
 
 -> @Bean is a method level annotation
 
--> When we want to customize any object creation then we will use @Bean annotation for that
+-> If we want to customize any object creation then we will use @Bean annotation for that
 
 @Configuration
 public class AppConfig {
@@ -495,7 +507,7 @@ public class AppConfig {
 }
 
 
-Note: @Bean method we can write in any spring bean class but recommended to write in @Configuration class like above.
+Note: @Bean Annotation we can write "in any spring bean class" but recommended to write in @Configuration class like above.
 
 ==============================================================================================
 
@@ -536,7 +548,8 @@ How to represent java class as a Spring Bean?
 
 Note: All the above annotations are class level annotations but  @Bean is method level annotation
 
-
+@Component
+==========
 -> @Component is a general purpose annotation to represent java class as Spring Bean
 
 
@@ -770,29 +783,33 @@ public class ReportService {
 
 
 
-Note: Field Injection is not recommended because it is violating oops principles and "it breaks Single Responsibility Principles."
+Note: Field Injection is not recommended because it is "violating oops principles" and "it breaks Single Responsibility Principles."
 
 -> When objects injected using field injection code review tools can't identify complexity.
 
 
 SI vs CI vs FI
 +++++++++++++
-
+SI
+===
 -> "Setter Injection" will be performed through setter method
 -> It is mandatory to specify @Autowired annoation at setter method
 -> If we don't specify @Autowired annotation then DI will not happen (Partial Injection)
 -> If DI not happend, when we call methods then we will get NullPointerException
 -> Target Bean will be created first then setter method will be called to inject dependent
 
-
+CI
+===
 -> "Constructor injection" will be performed through constructor
 -> If we have more than one constructor then we have to specify @Autowired at constructor level
 -> If we have only one parameterized constructor then @Autowired is optional
 -> In CI, "dependent bean" will be created first then "target bean" will be created
 -> Partial Injection is not possible in CI
 
-
+FI
+===
 -> FieldInjection will be performed through "Reflection API"
+-> It is mandatory to specify @Autowired annoation at Field level
 -> FI violating OOPS principles (private variable getting initialized from outside using Reflecion)
 -> It is simple to use
 -> Most of the programmers will use FI in projects because it us jus one line code
@@ -819,7 +836,7 @@ Bean Life Cycle
 
 -> In Spring Boot, we can work with Bean Lifecycle methods in 2 ways
 
-			1) By Implementing interfaces ( IntializingBean & DisposableBean )
+			1) By Implementing interfaces ( IntializingBean(afterPropertySet()) & DisposableBean(Destroy()) )
 
 			2) By Using Annotations ( @PostConstruct & @PreDestory )
 
